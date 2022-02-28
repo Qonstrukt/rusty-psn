@@ -1,5 +1,9 @@
 name: rusty-psn Builds
 
+on:
+  push
+  pull_request
+
 jobs:
   linux-cli-build:
     runs-on: [ubuntu-latest]
