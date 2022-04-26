@@ -8,7 +8,7 @@ jobs:
   linux-cli-build:
     runs-on: [ubuntu-latest]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Rust Cache
       uses: Swatinem/rust-cache@v1.3.0
     - name: Build rusty-psn (linux-cli)
@@ -18,7 +18,7 @@ jobs:
         mkdir result
         cp target/release/rusty-psn result
     - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@v3
       with:
         name: rusty-psn-cli-linux
         path: result
@@ -26,7 +26,7 @@ jobs:
   linux-egui-build:
     runs-on: [ubuntu-latest]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Rust Cache
       uses: Swatinem/rust-cache@v1.3.0
     - name: Install egui deps
@@ -38,7 +38,7 @@ jobs:
         mkdir result
         cp target/release/rusty-psn result
     - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@v3
       with:
         name: rusty-psn-egui-linux
         path: result
@@ -46,7 +46,7 @@ jobs:
   windows-cli-build:
     runs-on: [windows-latest]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Rust Cache
       uses: Swatinem/rust-cache@v1.3.0
     - name: Build rusty-psn (windows-egui)
@@ -56,7 +56,7 @@ jobs:
         mkdir result
         copy target/release/rusty-psn.exe result 
     - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@v3
       with:
         name: rusty-psn-cli-windows
         path: result 
@@ -64,7 +64,7 @@ jobs:
   windows-egui-build:
     runs-on: [windows-latest]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Rust Cache
       uses: Swatinem/rust-cache@v1.3.0
     - name: Build rusty-psn (windows-egui)
@@ -74,7 +74,7 @@ jobs:
         mkdir result
         copy target/release/rusty-psn.exe result 
     - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@v3
       with:
         name: rusty-psn-egui-windows
         path: result 
